@@ -35,8 +35,12 @@ $(function () {
 
     });
 
+
+
     $(window).on('resize', function () {
-        $('.header .gnb').removeClass('on')
+
+        $('.header .gnb').removeClass('on');
+
         $('.header .gnb>ul>li ul').removeAttr('style')
     });
 

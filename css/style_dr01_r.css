@@ -189,12 +189,12 @@
         margin-left: 0;
         padding: 120px 24px 0 24px;
         width: calc(100% - 80px);
-        height: 100vh;
+        height: calc(100vh + 200px);
         border-right: 1px solid #ddd;
 
         background: #fff;
 
-        transition: 0.4s;
+        transition: left 0.4s;
     }
 
     .header .gnb.on {
