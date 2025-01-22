@@ -38,6 +38,7 @@ $(function () {
     });
 
     $('.header .gnb').on('wheel touchmove', function (e) {
+        //e.stopPropagation();
         e.preventDefault();
     })
 })
