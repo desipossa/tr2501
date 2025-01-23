@@ -14,14 +14,38 @@ $(function () {
         },
     });
 
+    const mcs = new Swiper('.main_content_slide', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        breakpoints: {
 
+            769: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+            },
 
+        },
+    });
+
+    const txt = ['토목공사 01', '건설공사 마지막 꺼', '빌딩만들기']
+
+    const mss = new Swiper('.main_story_slide', {
+        loop: true,
+        on: {
+            slideChangeTransitionEnd: function () {
+                let idx = this.realIndex;
+                console.log(idx);
+                $('.main_story .num').text("0" + (idx + 1));
+                $('.main_story .tit').text(txt[idx]);
+            }
+        }
+    })
 });
-
 
 $(function () {
     $('.header .mbtn').on('click', function () {
-        $(this).toggleClass('on');
+        $(this).toggleClass('is-active');
         $('.header .gnb').toggleClass('on');
     });
 
@@ -35,7 +59,7 @@ $(function () {
     });
 
     $(window).on('resize', function () {
-        $('.header .mbtn').removeClass('on');
+        $('.header .mbtn').removeClass('is-active');
         $('.header .gnb').removeClass('on');
         $('.header .gnb>ul ul').removeAttr('style')
     });
@@ -45,6 +69,7 @@ $(function () {
         e.preventDefault();
     })
 })
+
 
 
 
